@@ -1,0 +1,45 @@
+
+.topnav {
+        background-color:hotpink;
+        overflow: hidden;
+    }
+    .topnav a {
+        float: left;
+        color:beige;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    .topnav a:hover {
+        background-color:#7f4646;
+        color:azure;
+    }
+
+    .topnav a.active {
+        background-color:crimson;
+        color: white;
+    }
+    .topnav, body {
+        margin: 0;
+        padding: 0;
+    }
+    .banner {
+        background-image: url("https://cdn.thegazelle.org/gazelle/2022/10+-+May+08%2C+2022/Ferreol_LeniRobredo.jpg");
+        background-size: cover;
+        background-position: center;
+        display:block;                 
+        text-align:center;  
+        margin: 0;
+        padding: 20px 0;
+    }
+    .banner h1 {
+        color:white;
+        margin-right: 0 0 10px 0;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);  
+    }
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: palegoldenrod;
+}
