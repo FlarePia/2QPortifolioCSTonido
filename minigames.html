@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unstable Universe — Minigames</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="top-row">
+      <div class="logo">
+        <div class="mark">U</div>
+        <div>
+          <div class="title">Unstable Universe</div>
+          <div class="subtitle">Minecraft SMP</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="characters.html">Characters</a></li>
+          <li><a href="episodes.html">Episodes</a></li>
+          <li><a href="minigames.html" class="active">Minigames</a></li>
+          <li><a href="creators.html">Creators</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2 style="padding-left:2rem;">Which Character Are You?</h2>
+    <div class="quiz">
+      <div class="card">
+        <h3>Find Your SMP Persona</h3>
+        <p style="color:var(--muted)">Answer a few quick questions to see which Unstable Universe member you match most!</p>
+
+        <div class="quiz-question">
+          <label>Choose your favorite Minecraft tool:</label>
+          <select id="q1" class="input-select">
+            <option value="sword">Sword</option>
+            <option value="pickaxe">Pickaxe</option>
+            <option value="bow">Bow</option>
+            <option value="tnt">TNT</option>
+          </select>
+        </div>
+
+        <div class="quiz-question">
+          <label>What’s your playstyle?</label>
+          <select id="q2" class="input-select">
+            <option value="strategic">Strategic and calm</option>
+            <option value="chaotic">Chaotic and bold</option>
+            <option value="creative">Creative and methodical</option>
+            <option value="explosive">Unpredictable and wild</option>
+          </select>
+        </div>
+
+        <button class="btn primary" style="margin-top:1rem" onclick="runQuiz()">See Result</button>
+      </div>
+
+      <div class="result" id="quizResult">
+        <strong>Your Result</strong>
+        <div id="resultCard" class="character-result"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <span>© 2025 Unstable Universe SMP</span>
+      <span>Website designed by the community</span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
