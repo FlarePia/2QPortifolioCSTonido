@@ -1,92 +1,91 @@
-// slideshow
-(function(){
-    const slides = document.querySelectorAll('.slide');
-    if (!slides.length) return;
-    let idx = 0;
-    setInterval(()=>{
-      slides[idx].classList.remove('active');
-      idx = (idx + 1) % slides.length;
-      slides[idx].classList.add('active');
-    }, 3500);
-  })();
-  
-  // toggle episode summaries
-  function toggleEp(el){
-    const ep = el.closest('.ep');
-    const full = ep.querySelector('.ep-full');
-    if(full.style.display === 'block'){
-      full.style.display = 'none';
-      el.textContent = 'View More';
-    } else {
-      full.style.display = 'block';
-      el.textContent = 'View Less';
-    }
-  }
-  
-  // expandable characters
-  document.querySelectorAll('.character').forEach(card => {
-    card.addEventListener('click', () => {
-      document.querySelectorAll('.character').forEach(c => {
-        if (c !== card) c.classList.remove('active');
-      });
-      card.classList.toggle('active');
-    });
-  });
-  
-  // interactive quiz
-  function runQuiz(){
-    const q1 = document.getElementById('q1').value;
-    const q2 = document.getElementById('q2').value;
-    const resultCard = document.getElementById('resultCard');
-  
-    const mapping = {
-      sword: 'Spoke',
-      pickaxe: 'Wemmbu',
-      bow: 'Parrot',
-      tnt: 'Flame',
-      strategic: 'Parrot',
-      chaotic: 'Spoke',
-      creative: 'Wemmbu',
-      explosive: 'Flame'
-    };
-  
-    const results = {
-      Parrot: {
-        img: 'https://i.imgur.com/t3C0b6S.jpeg',
-        name: 'Parrot',
-        role: 'The Strategist',
-        desc: 'Calculated and calm under pressure. Every move is a step in a grander plan.'
-      },
-      Spoke: {
-        img: 'https://i.imgur.com/nCYyVZC.jpeg',
-        name: 'Spoke',
-        role: 'The Enforcer',
-        desc: 'Thrives on chaos, strength, and raw unpredictability in every fight.'
-      },
-      Wemmbu: {
-        img: 'https://i.imgur.com/AMW7rOD.jpeg',
-        name: 'Wemmbu',
-        role: 'The Builder',
-        desc: 'Creative and precise — his bases are both deadly and beautiful.'
-      },
-      Flame: {
-        img: 'https://i.imgur.com/6mLw9Yt.jpeg',
-        name: 'Flame',
-        role: 'The Wildcard',
-        desc: 'Explosive energy and fearless action define Flame’s approach to everything.'
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+setInterval(() => {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}, 3000);
+
+const faders = document.querySelectorAll('.fade-up');
+
+const appearOnScroll = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.classList.add('visible');
+        observer.unobserve(entry.target);
       }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+faders.forEach(el => appearOnScroll.observe(el));
+
+document.querySelectorAll('.creator-card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.classList.add('pulse-active');
+  });
+  card.addEventListener('mouseleave', () => {
+    card.classList.remove('pulse-active');
+  });
+});
+
+// Episode toggle feature
+document.querySelectorAll('.ep-card .more').forEach(btn => {
+  btn.addEventListener('click', e => {
+    const card = e.target.closest('.ep-card');
+    card.classList.toggle('active');
+    btn.textContent = card.classList.contains('active') ? 'View Less' : 'View More';
+  });
+});
+
+function runQuiz() {
+  const q1 = document.getElementById('q1').value;
+  const q2 = document.getElementById('q2').value;
+  const resultCard = document.getElementById('resultCard');
+  const quizResult = document.getElementById('quizResult');
+
+  let character = {};
+  
+  if ((q1 === 'sword' && q2 === 'strategic') || q2 === 'strategic') {
+    character = {
+      name: 'Parrot',
+      role: 'The Strategist',
+      img: 'https://i.imgur.com/t3C0b6S.jpeg',
+      desc: 'Calm, tactical, and always two steps ahead — you embody Parrot’s precision and leadership.'
     };
-  
-    const choice = mapping[q1] || mapping[q2] || 'Parrot';
-    const char = results[choice];
-  
-    resultCard.innerHTML = `
-      <div class="card" style="animation:fadeIn .4s ease;">
-        <img src="${char.img}" alt="${char.name}" style="width:100%;border-radius:8px;">
-        <h3>${char.name}</h3>
-        <p>${char.role}</p>
-        <p style="color:var(--muted)">${char.desc}</p>
-      </div>
-    `;
+  } else if (q1 === 'tnt' || q2 === 'explosive') {
+    character = {
+      name: 'Flame',
+      role: 'The Wildcard',
+      img: 'https://i.imgur.com/6mLw9Yt.jpeg',
+      desc: 'You’re explosive and unpredictable — a true agent of chaos like Flame!'
+    };
+  } else if (q1 === 'pickaxe' || q2 === 'creative') {
+    character = {
+      name: 'Wemmbu',
+      role: 'The Builder',
+      img: 'https://i.imgur.com/AMW7rOD.jpeg',
+      desc: 'Creative, patient, and precise — you think in blueprints and bring worlds to life.'
+    };
+  } else {
+    character = {
+      name: 'Spoke',
+      role: 'The Enforcer',
+      img: 'https://i.imgur.com/nCYyVZC.jpeg',
+      desc: 'You’re fearless, bold, and thrive in chaos — Spoke would be proud.'
+    };
   }
-  
+
+  resultCard.innerHTML = `
+    <img src="${character.img}" alt="${character.name}">
+    <h4>${character.name}</h4>
+    <p><strong>${character.role}</strong></p>
+    <p>${character.desc}</p>
+  `;
+
+  resultCard.classList.add('show');
+  quizResult.scrollIntoView({ behavior: 'smooth' });
+}

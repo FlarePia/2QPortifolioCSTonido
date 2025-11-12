@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Unstable Universe — Minigames</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="bg-animation"></div>
+
   <header>
     <div class="top-row">
-      <div class="logo">
-        <div class="mark">U</div>
+      <div class="logo fade-in">
+        <div class="mark pulse">U</div>
         <div>
           <div class="title">Unstable Universe</div>
           <div class="subtitle">Minecraft SMP</div>
@@ -28,12 +31,13 @@
     </div>
   </header>
 
-  <main>
-    <h2 style="padding-left:2rem;">Which Character Are You?</h2>
-    <div class="quiz">
-      <div class="card">
+  <main class="fade-in">
+    <h2 class="page-title slide-up">Which Character Are You?</h2>
+
+    <div class="quiz fade-up">
+      <div class="card quiz-card">
         <h3>Find Your SMP Persona</h3>
-        <p style="color:var(--muted)">Answer a few quick questions to see which Unstable Universe member you match most!</p>
+        <p class="muted">Answer a few quick questions to see which <strong>Unstable Universe</strong> member you match most!</p>
 
         <div class="quiz-question">
           <label>Choose your favorite Minecraft tool:</label>
@@ -55,10 +59,10 @@
           </select>
         </div>
 
-        <button class="btn primary" style="margin-top:1rem" onclick="runQuiz()">See Result</button>
+        <button class="btn primary glow-btn" style="margin-top:1rem" onclick="runQuiz()">See Result</button>
       </div>
 
-      <div class="result" id="quizResult">
+      <div class="result fade-up" id="quizResult">
         <strong>Your Result</strong>
         <div id="resultCard" class="character-result"></div>
       </div>
@@ -66,11 +70,12 @@
   </main>
 
   <footer>
-    <div class="footer-row">
+    <div class="footer-row fade-in">
       <span>© 2025 Unstable Universe SMP</span>
       <span>Website designed by the community</span>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
