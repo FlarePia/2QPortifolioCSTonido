@@ -91,15 +91,15 @@
     `;
   }
 
-  function wifiesturns(isLeft){
+  function characterTurns(name, isLeft){
     const images = [
-      "assets/Wifies/front.png",
-      "assets/Wifies/left.png",
-      "assets/Wifies/back.png",
-      "assets/Wifies/right.png"
+      "assets/" + name + "/front.png",
+      "assets/" + name + "/left.png",
+      "assets/" + name + "/back.png",
+      "assets/" + name + "/right.png"
     ]
 
-    const currentImage = document.getElementById('Wifies').src;
+    const currentImage = document.getElementById(name).src;
 
     let index = 0;
     for (let i = 0; i < images.length; i++){
@@ -113,5 +113,5 @@
     if (isLeft) direction = 1;
 
     let newIndex = (index + direction + images.length) % images.length;
-    document.getElementById('Wifies').src = images[newIndex];
+    document.getElementById(name).src = images[newIndex];
   }
