@@ -37,7 +37,15 @@
 
       <div class="grid-4">
         <div class="card character fade-up">
-          <img src="https://tse1.mm.bing.net/th/id/OIP.BjbErcvzKkkGpiKC3CaoLwAAAA?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Parrot">
+          <div style="display: flex;">
+            <div class="margin-auto">
+            </div>
+            <div>
+              <img id="Parrot" src="assets/Parrot/front.png" alt="Parrot" class="fit-image" onclick="openOverlay('Parrot')">
+            </div>
+            <div class="margin-auto">
+            </div>
+          </div>
           <h3>Parrot</h3>
           <p class="role">The Strategist</p>
           <div class="details">
@@ -47,7 +55,15 @@
         </div>
 
         <div class="card character fade-up">
-          <img src="https://minotar.net/helm/734abedf785e4424a42b32f953c3c78d/512.png" alt="Spoke">
+          <div style="display: flex;">
+            <div class="margin-auto">
+            </div>
+            <div>
+              <img id="Spoke" src="assets/Spoke/front.png" alt="Spoke" class="fit-image" onclick="openOverlay('Spoke')">
+            </div>
+            <div class="margin-auto">
+            </div>
+          </div>
           <h3>Spoke</h3>
           <p class="role">The Enforcer</p>
           <div class="details">
@@ -83,13 +99,11 @@
         <div class="card character">
           <div style="display: flex;">
             <div class="margin-auto">
-              <img src="assets/arrow-left.png" alt="arrow-left" class="arrow" onclick="characterTurns('Wifies',true)">
             </div>
             <div>
-              <img id="Wifies" src="assets/Wifies/front.png" alt="Wifies" class="fit-image">
+              <img id="Wifies" src="assets/Wifies/front.png" alt="Wifies" class="fit-image" onclick="openOverlay('Wifies')">
             </div>
             <div class="margin-auto">
-              <img src="assets/arrow-right.png" alt="arrow-right" class="arrow" onclick="characterTurns('Wifies',false)">
             </div>
           </div>
           <h3>Wifies</h3>
@@ -103,13 +117,11 @@
         <div class="card character">
           <div style="display: flex;">
             <div class="margin-auto">
-              <img src="assets/arrow-left.png" alt="arrow-left" class="arrow" onclick="characterTurns('Dean',true)">
             </div>
             <div>
-              <img id="Dean" src="assets/Dean/front.png" alt="Dean" class="fit-image">
+              <img id="Dean" src="assets/Dean/front.png" alt="Dean" class="fit-image" onclick="openOverlay('Dean')" >
             </div>
             <div class="margin-auto">
-              <img src="assets/arrow-right.png" alt="arrow-right" class="arrow" onclick="characterTurns('Dean',false)">
             </div>
           </div>
           <h3>Dean</h3>
@@ -160,7 +172,7 @@
           <img src="assets/arrow-left.png" alt="arrow-left" class="arrow" onclick="characterTurns('Wifies',true)">
         </div>
         <div>
-          <img id="Wifies" src="assets/Wifies/front.png" alt="Wifies" class="fit-image">
+          <img id="active-character" src="assets/Wifies/front.png" alt="Wifies" class="fit-image">
         </div>
         <div class="margin-auto">
           <img src="assets/arrow-right.png" alt="arrow-right" class="arrow" onclick="characterTurns('Wifies',false)">

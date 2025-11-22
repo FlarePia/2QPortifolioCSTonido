@@ -99,7 +99,7 @@ function characterTurns(name, isLeft){
     "assets/" + name + "/right.png"
   ]
 
-  const currentImage = document.getElementById(name).src;
+  const currentImage = document.getElementById("active-character").src;
 
   let index = 0;
   for (let i = 0; i < images.length; i++){
@@ -113,7 +113,7 @@ function characterTurns(name, isLeft){
   if (isLeft) direction = 1;
 
   let newIndex = (index + direction + images.length) % images.length;
-  document.getElementById(name).src = images[newIndex];
+  document.getElementById("`active-character").src = images[newIndex];
 }
 
 function closeOverlay() {
@@ -130,3 +130,15 @@ document.getElementById('overlay').addEventListener('click', function(e){
 
 const closeBtn = document.querySelector('.close-btn');
 closeBtn.addEventListener('click', closeOverlay)
+
+ activeCharacter = name;
+
+function openOverlay(name) {
+   alert("helloooo");
+  document.getElementById("active-character").src = "assets/" + name + "/front.png";
+  const overlay = document.getElementById('overlay');
+  overlay.style.display = 'flex';
+  characterTurns(name);
+}
+ 
+let activeCharacter="";
