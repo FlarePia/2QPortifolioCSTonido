@@ -89,3 +89,29 @@ function runQuiz() {
   resultCard.classList.add('show');
   quizResult.scrollIntoView({ behavior: 'smooth' });
 }
+
+
+function characterTurns(name, isLeft){
+  const images = [
+    "assets/" + name + "/front.png",
+    "assets/" + name + "/left.png",
+    "assets/" + name + "/back.png",
+    "assets/" + name + "/right.png"
+  ]
+
+  const currentImage = document.getElementById(name).src;
+
+  let index = 0;
+  for (let i = 0; i < images.length; i++){
+    if (currentImage.endsWith(images[i])) {   
+      index = i;
+      break;
+    }
+  }
+
+  let direction = -1;
+  if (isLeft) direction = 1;
+
+  let newIndex = (index + direction + images.length) % images.length;
+  document.getElementById(name).src = images[newIndex];
+}
