@@ -134,7 +134,6 @@ closeBtn.addEventListener('click', closeOverlay)
  activeCharacter = name;
 
 function openOverlay(name) {
-   alert("helloooo");
   document.getElementById("active-character").src = "assets/" + name + "/front.png";
   const overlay = document.getElementById('overlay');
   overlay.style.display = 'flex';
