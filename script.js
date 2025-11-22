@@ -115,3 +115,18 @@ function characterTurns(name, isLeft){
   let newIndex = (index + direction + images.length) % images.length;
   document.getElementById(name).src = images[newIndex];
 }
+
+function closeOverlay() {
+  const overlay = document.getElementById('overlay');
+  overlay.style.display = 'none';
+}
+
+document.getElementById('overlay').addEventListener('click', function(e){
+  alert('clicked');
+  if(e.target.id === 'overlay'){
+    closeOverlay();
+  }
+})
+
+const closeBtn = document.querySelector('.close-btn');
+closeBtn.addEventListener('click', closeOverlay)

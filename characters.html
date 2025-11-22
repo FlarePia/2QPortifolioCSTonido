@@ -151,5 +151,36 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <div id="overlay">
+    <div class="card character overlay-content" style="display: flex;">
+      <span class="close-btn" onclick="closeOverlay()">&times;</span>
+      <div class="character-view">
+        <div class="margin-auto">
+          <img src="assets/arrow-left.png" alt="arrow-left" class="arrow" onclick="characterTurns('Wifies',true)">
+        </div>
+        <div>
+          <img id="Wifies" src="assets/Wifies/front.png" alt="Wifies" class="fit-image">
+        </div>
+        <div class="margin-auto">
+          <img src="assets/arrow-right.png" alt="arrow-right" class="arrow" onclick="characterTurns('Wifies',false)">
+        </div>
+      </div>
+      <div class="character-info">
+        <h3>Wifies</h3>
+        <p>Role: The Strategist</p>
+        <div class="details">
+          <h4>About Wifies</h4>
+          <p>Wifies is known for his tactical decisions and calm approach under pressure. He coordinates plans, forms alliances, and always thinks two steps ahead.</p>
+        </div>
+      </div>
+    </div>
+    <!--
+    <div class="overlay-content">
+      <h1 class="glowy-title">Unstable Universe</h1>
+      <button id="close-overlay" onclick="closeOverlay()">Enter Site</button>
+    </div>
+    -->
+  </div>
 </body>
 </html>
