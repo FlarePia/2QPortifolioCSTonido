@@ -91,12 +91,14 @@ function runQuiz() {
 }
 
 
-function characterTurns(name, isLeft){
+function characterTurns(isLeft){
+  const activeCharacter = document.getElementById("active-character").alt;
+
   const images = [
-    "assets/" + name + "/front.png",
-    "assets/" + name + "/left.png",
-    "assets/" + name + "/back.png",
-    "assets/" + name + "/right.png"
+    "assets/" + activeCharacter + "/front.png",
+    "assets/" + activeCharacter + "/left.png",
+    "assets/" + activeCharacter + "/back.png",
+    "assets/" + activeCharacter + "/right.png"
   ]
 
   const currentImage = document.getElementById("active-character").src;
@@ -113,7 +115,7 @@ function characterTurns(name, isLeft){
   if (isLeft) direction = 1;
 
   let newIndex = (index + direction + images.length) % images.length;
-  document.getElementById("`active-character").src = images[newIndex];
+  document.getElementById("active-character").src = images[newIndex];
 }
 
 function closeOverlay() {
@@ -131,13 +133,10 @@ document.getElementById('overlay').addEventListener('click', function(e){
 const closeBtn = document.querySelector('.close-btn');
 closeBtn.addEventListener('click', closeOverlay)
 
- activeCharacter = name;
-
 function openOverlay(name) {
+  document.getElementById("active-character").alt = name;
   document.getElementById("active-character").src = "assets/" + name + "/front.png";
   const overlay = document.getElementById('overlay');
   overlay.style.display = 'flex';
-  characterTurns(name);
 }
  
-let activeCharacter="";
