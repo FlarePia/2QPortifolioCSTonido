@@ -606,7 +606,7 @@ footer {
 
 .overlay-content {
   background-color:  rgba(0, 0, 0) !important;
-  padding: 3rem 5rem;
+  padding: 50px 75px !important;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 0 30px rgba(255, 68, 68);
@@ -636,4 +636,8 @@ footer {
   font-size: 25px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.i {
+  font-size: 10px !important;
 }

@@ -2,9 +2,9 @@ const slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
 
 setInterval(() => {
-  slides[currentSlide].classList.remove('active');
+  slides[currentSlide]?.classList.remove('active');
   currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
+  slides[currentSlide]?.classList.add('active');
 }, 3000);
 
 const faders = document.querySelectorAll('.fade-up');
@@ -13,7 +13,7 @@ const appearOnScroll = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.classList.add('visible');
+        //entry.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
@@ -123,19 +123,115 @@ function closeOverlay() {
   overlay.style.display = 'none';
 }
 
-document.getElementById('overlay').addEventListener('click', function(e){
-  alert('clicked');
-  if(e.target.id === 'overlay'){
-    closeOverlay();
-  }
-})
+const characters = {
+    'Ash': {
+        name: "Ash",
+        quote: "It’s the people we love the most that tear us apart” (ParrotX2: Unstable SMP: Doomsday)",
+        description: "Ash is the determined and courageous leader of the group. With a strong sense of justice and an unwavering commitment to his friends, he faces challenges head-on and inspires those around him."
+    },
+    'Clown': {
+        name: "Clown",
+        quote: "“Laughter is the best medicine, even in the darkest times.”",
+        description: "Clown is the heart of the group, always ready with a joke or a prank to lighten the mood. Beneath his playful exterior lies a sharp mind and a deep loyalty to his friends."
+    },
+    'Dean': {
+        name: "Dean",
+        quote: "“Knowledge is power, and I intend to wield it wisely.”",
+        description: "Dean is the intellectual of the group, always curious and eager to learn. His analytical mind and resourcefulness often help the team navigate complex situations."
+    },
+    'Derapchu': {
+        name: "Derapchu",
+        quote: "“Strength and honor guide my path.”",
+        description: "Derapchu is the strong and silent type, known for his physical prowess and unwavering sense of honor. He is a dependable ally who values loyalty above all else."
+    },
+    'Director': {
+        name: "Director",
+        quote: "“Every plan needs a mastermind.”",
+        description: "Director is the strategic thinker of the group, always planning several steps ahead. His leadership and tactical skills are crucial in guiding the team through their adventures."
+    },
+    'Eggchan': {
+        name: "Eggchan",
+        quote: "“Creativity is the key to unlocking new possibilities.”",
+        description: "Eggchan is the creative force of the group, always coming up with innovative ideas and solutions. Her artistic talents and imaginative thinking inspire those around her."
+    },
+    'Flame': {
+        name: "Flame",
+        quote: "“In the heat of battle, I find my true self.”", 
+        description: "Flame is the fiery and passionate member of the group. Known for his impulsive nature and fierce loyalty, he brings energy and intensity to every situation."
+    },
+    'Jumper': {
+        name: "Jumper",
+        quote: "“Adventure awaits those who dare to leap.”",
+        description: "Jumper is the adventurous spirit of the group, always eager to explore new places and take risks. His enthusiasm and courage inspire others to step out of their comfort zones."
+    },
+    'Leo': {
+        name: "Leo",
+        quote: "“Leadership is about serving others.”",
+        description: "Leo is the natural leader of the group, known for his charisma and ability to inspire others. His sense of responsibility and dedication to his friends make him a trusted figure."
+    },
+    'Lomedy': {
+        name: "Lomedy",
+        quote: "“A good laugh can brighten the darkest day.”",
+        description: "Lomedy is the comedic relief of the group, always ready with a joke or a funny story. His lighthearted nature and positive attitude help keep spirits high during tough times."
+    },
+    'Mane': {
+        name: "Mane",
+        quote: "“Strength comes from unity.”",
+        description: "Mane is the dependable and strong member of the group. Known for his physical strength and protective nature, he is a steadfast ally who values friendship and teamwork."
+    },
+    'Mapicc': {
+        name: "Mapicc",
+        quote: "“Precision and skill lead to victory.”", 
+        description: "Mapicc is the skilled and precise member of the group. Known for his expertise in combat and strategy, he is a reliable ally who approaches challenges with focus and determination."
+    },
+    'Minute': {
+        name: "Minute",
+        quote: "“Time is the most valuable resource we have.”",
+        description: "Minute is the punctual and organized member of the group. Known for his time management skills and reliability, he ensures that the team stays on track and meets their goals."
+    },
+    'Nufuli': {
+        name: "Nufuli",
+        quote: "“Adaptability is the key to survival.”",
+        description: "Nufuli is the adaptable and resourceful member of the group. Known for his ability to think on his feet and adjust to changing situations, he is a valuable asset in any adventure."
+    },
+    'Parrot': {
+        name: "Parrot",
+        quote: "“We will meet each other soon, Parrot, whether you want to or not. Because that’s the story I wrote, and I don’t write stories where I lose.”",
+        description: "Parrot is known for his tactical decisions and calm approach under pressure. He coordinates plans, forms alliances, and always thinks two steps ahead."
+    },
+    'Spoke': {
+        name: "Spoke",
+        quote: "“Fear is just a challenge waiting to be conquered.”",
+        description: "Spoke is the fearless and bold member of the group. Known for his bravery and willingness to face danger head-on, he thrives in chaotic situations and inspires others with his courage."
+    },
+    'Theo': {
+        name: "Theo",
+        quote: "“Innovation drives progress.”",
+        description: "Theo is the inventive and forward-thinking member of the group. Known for his creativity and problem-solving skills, he constantly seeks new ways to improve and innovate."
+    },
+    'Wemmbu': {
+        name: "Wemmbu",
+        quote: "“Creativity is the foundation of all great things.”",
+        description: "Wemmbu is the creative and patient member of the group. Known for his architectural skills and attention to detail, he brings imaginative ideas to life and builds incredible structures."
+    },
+    'Wifies': {
+        name: "Wifies",
+        quote: "“We will meet each other soon, Parrot, whether you want to or not. Because that’s the story I wrote, and I don’t write stories where I lose.”",
+        description: "Wifies is known for his tactical decisions and calm approach under pressure. He coordinates plans, forms alliances, and always thinks two steps ahead."
+    }
+      
 
-const closeBtn = document.querySelector('.close-btn');
-closeBtn.addEventListener('click', closeOverlay)
+}
+
 
 function openOverlay(name) {
   document.getElementById("active-character").alt = name;
   document.getElementById("active-character").src = "assets/" + name + "/front.png";
+
+  document.getElementById('json-name').innerText = characters[name].name;
+  document.getElementById('json-quote').innerText = characters[name].quote;
+  document.getElementById('json-description').innerText = characters[name].description;
+
   const overlay = document.getElementById('overlay');
   overlay.style.display = 'flex';
 }
