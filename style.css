@@ -21,7 +21,7 @@ header {
   backdrop-filter: blur(8px);
   z-index: 10;
   padding: 1rem 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .top-row {
@@ -78,6 +78,7 @@ nav ul {
   height: 2px;
   background: var(--accent);
   transition: width 0.3s;
+  text-decoration: none;
 }
 
 .nav-link:hover::after {
@@ -126,8 +127,8 @@ nav ul {
 }
 
 .hero-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 10px;
   width: 300px;
@@ -135,8 +136,15 @@ nav ul {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .slide {
@@ -144,34 +152,47 @@ nav ul {
   font-weight: bold;
   animation: fadeIn 1s ease-in;
 }
+
 .slide.active {
   display: block;
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 footer {
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bg-animation {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: radial-gradient(circle at 20% 20%, #ff3c3c11, transparent 50%),
-              radial-gradient(circle at 80% 80%, #8000ff11, transparent 50%);
+    radial-gradient(circle at 80% 80%, #8000ff11, transparent 50%);
   animation: pulseBG 10s infinite alternate;
   z-index: -1;
 }
 
 @keyframes pulseBG {
-  0% {transform: scale(1);}
-  100% {transform: scale(1.2);}
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
 }
 
 .fade-in {
@@ -183,8 +204,15 @@ footer {
 }
 
 @keyframes slideUp {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pulse {
@@ -192,8 +220,15 @@ footer {
 }
 
 @keyframes pulseEffect {
-  0%, 100% {transform: scale(1);}
-  50% {transform: scale(1.2);}
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 .page-title {
@@ -216,8 +251,8 @@ footer {
 }
 
 .card.character {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 1.5rem;
   text-align: center;
@@ -276,10 +311,21 @@ footer {
   animation: fadeUp 1s forwards;
 }
 
-.fade-up:nth-child(1) { animation-delay: 0.2s; }
-.fade-up:nth-child(2) { animation-delay: 0.4s; }
-.fade-up:nth-child(3) { animation-delay: 0.6s; }
-.fade-up:nth-child(4) { animation-delay: 0.8s; }
+.fade-up:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.fade-up:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.fade-up:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.fade-up:nth-child(4) {
+  animation-delay: 0.8s;
+}
 
 @keyframes fadeUp {
   to {
@@ -326,8 +372,13 @@ footer {
 }
 
 @keyframes rotateGlow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .creator-card h3 {
@@ -371,10 +422,21 @@ footer {
   animation: fadeUp 1s forwards;
 }
 
-.fade-up:nth-child(1) { animation-delay: 0.2s; }
-.fade-up:nth-child(2) { animation-delay: 0.4s; }
-.fade-up:nth-child(3) { animation-delay: 0.6s; }
-.fade-up:nth-child(4) { animation-delay: 0.8s; }
+.fade-up:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.fade-up:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.fade-up:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.fade-up:nth-child(4) {
+  animation-delay: 0.8s;
+}
 
 @keyframes fadeUp {
   to {
@@ -395,8 +457,8 @@ footer {
 }
 
 .ep-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.4s ease;
@@ -406,8 +468,8 @@ footer {
 
 .ep-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(255,68,68,0.25);
-  border-color: rgba(255,68,68,0.3);
+  box-shadow: 0 0 25px rgba(255, 68, 68, 0.25);
+  border-color: rgba(255, 68, 68, 0.3);
 }
 
 .ep-thumb {
@@ -463,7 +525,7 @@ footer {
 
 .ep-card.active {
   border-color: var(--accent);
-  box-shadow: 0 0 30px rgba(255,68,68,0.4);
+  box-shadow: 0 0 30px rgba(255, 68, 68, 0.4);
 }
 
 /* Fade-up animation reused */
@@ -473,9 +535,17 @@ footer {
   animation: fadeUp 1s forwards;
 }
 
-.fade-up:nth-child(1) { animation-delay: 0.2s; }
-.fade-up:nth-child(2) { animation-delay: 0.4s; }
-.fade-up:nth-child(3) { animation-delay: 0.6s; }
+.fade-up:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.fade-up:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.fade-up:nth-child(3) {
+  animation-delay: 0.6s;
+}
 
 @keyframes fadeUp {
   to {
@@ -575,13 +645,13 @@ footer {
   object-fit: contain;
   margin-bottom: 1rem;
   border: 2px solid var(--accent);
-  box-shadow: 0 0 20px rgba(255,68,68,0.4);
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.4);
 }
 
 .fit-image {
   object-fit: contain;
 }
-  
+
 .arrow {
   width: 40px !important;
   height: 40px !important;
@@ -597,15 +667,15 @@ footer {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  display:none;
+  display: none;
   justify-content: center;
   align-items: center;
 }
 
 .overlay-content {
-  background-color:  rgba(0, 0, 0) !important;
+  background-color: rgba(0, 0, 0) !important;
   padding: 50px 75px !important;
   border-radius: 12px;
   text-align: center;
@@ -615,7 +685,7 @@ footer {
   position: relative;
 }
 
-.character-info{
+.character-info {
   padding-left: 50px !important;
   padding-right: 50px !important;
 }
@@ -640,4 +710,19 @@ footer {
 
 .i {
   font-size: 10px !important;
+}
+
+
+/*a {
+  text-decoration: none;
+}
+
+*/
+a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.creator-pics {
+  width: 100%;
 }
