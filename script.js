@@ -53,28 +53,28 @@ function runQuiz() {
     character = {
       name: 'Parrot',
       role: 'The Strategist',
-      img: 'https://i.imgur.com/t3C0b6S.jpeg',
+      img: 'assets/Parrot/front.png',
       desc: 'Calm, tactical, and always two steps ahead — you embody Parrot’s precision and leadership.'
     };
   } else if (q1 === 'tnt' || q2 === 'explosive') {
     character = {
       name: 'Flame',
       role: 'The Wildcard',
-      img: 'https://i.imgur.com/6mLw9Yt.jpeg',
+      img: 'assets/Flame/front.png',
       desc: 'You’re explosive and unpredictable — a true agent of chaos like Flame!'
     };
   } else if (q1 === 'pickaxe' || q2 === 'creative') {
     character = {
       name: 'Wemmbu',
       role: 'The Builder',
-      img: 'https://i.imgur.com/AMW7rOD.jpeg',
+      img: 'assets/Wemmbu/front.png',
       desc: 'Creative, patient, and precise — you think in blueprints and bring worlds to life.'
     };
   } else {
     character = {
       name: 'Spoke',
       role: 'The Enforcer',
-      img: 'https://i.imgur.com/nCYyVZC.jpeg',
+      img: 'assets/Spoke/front.png',
       desc: 'You’re fearless, bold, and thrive in chaos — Spoke would be proud.'
     };
   }
