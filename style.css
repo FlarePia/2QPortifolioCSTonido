@@ -563,7 +563,7 @@ footer {
 }
 
 .quiz-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(12, 12, 12, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 2rem;
@@ -572,6 +572,7 @@ footer {
   max-width: 450px;
   transition: all 0.3s ease;
   box-shadow: 0 0 20px rgba(255, 68, 68, 0.15);
+  opacity: 1;
 }
 
 .quiz-card:hover {
@@ -746,5 +747,169 @@ footer {
   background-repeat: no-repeat; 
   z-index: -1;                 
   filter: brightness(0.6);  
+}
+
+/* home.css */
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80vh;
+  padding: 4rem 6rem;
+  gap: 3rem;
+  position: relative;
+}
+
+/* Hero Text Box */
+.hero-text {
+  background: rgba(10, 10, 15, 0.75); /* dark semi-transparent box */
+  border: 2px solid rgba(255, 68, 68, 0.5); /* subtle accent border */
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 600px;
+  color: #eee;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+/* Headline Glow */
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ff3c3c, #8000ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(255, 68, 68, 0.4);
+}
+
+/* Paragraph Styling */
+.hero-text p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* CTA Buttons */
+.hero-text .cta {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-text .btn {
+  font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-text .btn.primary {
+  background: linear-gradient(135deg, #ff3c3c, #8000ff);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+}
+
+.hero-text .btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Floating Hero Card */
+.hero-card.floating-card {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 68, 68, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-card.floating-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 35px rgba(255, 68, 68, 0.5);
+}
+
+.hero-card.floating-card .muted {
+  font-size: 1rem;
+  color: #bbb;
+  margin-top: 1rem;
+  text-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+
+/* Slideshow Images inside Hero Card */
+.hero-card .slideshow img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .hero-text {
+    max-width: 90%;
+    padding: 2rem;
+  }
+
+  .hero-card.floating-card {
+    max-width: 90%;
+  }
+}
+
+/* forda titles */
+.page-title {
+  display: block;
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 1.2rem 2.5rem;
+  background-color: rgba(0, 0, 0, 0.8); /* darker translucent bg */
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 68, 68, 0.4);
+  text-align: center;
+  line-height: 1.4;
+  color: #fff;
+  opacity: 1;
+}
+
+/* subtext */
+.page-title p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffe0e0;
+  text-align: center;
+  opacity: 0.95;
+}
+
+/* for char cards */
+.card.character {
+  background-color: rgba(0, 0, 0, 0.8); /* dark translucent bg */
+  border: 1px solid rgba(255, 68, 68, 0.2); /* glowy-ish red border */
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 68, 68, 0.2);
+}
+
+/* makeee brighterrr */
+.card.character:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 68, 68, 0.35);
+  border-color: rgba(255, 68, 68, 0.4);
 }
 

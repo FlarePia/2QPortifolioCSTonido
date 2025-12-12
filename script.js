@@ -13,7 +13,6 @@ const appearOnScroll = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        //entry.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
