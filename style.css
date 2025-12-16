@@ -915,3 +915,68 @@ footer {
   border-color: rgba(255, 68, 68, 0.4);
 }
 
+/* Navigation links */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  padding: 0.3rem 0;
+  transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+}
+
+/* Neon glow underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff3c3c, #8000ff);
+  border-radius: 2px;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Hover effect: underline grows + glow */
+.nav-link:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 68, 68, 0.7), 0 0 15px rgba(128, 0, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.ep-card {
+  background: rgba(0, 0, 0, 0.6); /* dark background */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.ep-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 68, 68, 0.6); /* glowing hover effect */
+  border-color: rgba(255, 68, 68, 0.4);
+}
+
+.ep-thumb {
+  padding: 0; /* remove padding */
+  background: none;
+}
+
+.ep-thumb img {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* YouTube ratio */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ep-thumb img:hover {
+  transform: scale(1.03); /* subtle zoom on hover */
+}
