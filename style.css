@@ -596,11 +596,16 @@ footer {
   padding: 0.6rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.05);
-  color: #fff;
+  color: #eee;
   border-radius: 6px;
   font-size: 1rem;
   outline: none;
   transition: border 0.3s ease;
+}
+
+.input-select option {
+  color: #eee; 
+  background: rgba(0, 0, 0, 0.8); 
 }
 
 .input-select:hover,
@@ -915,7 +920,7 @@ footer {
   border-color: rgba(255, 68, 68, 0.4);
 }
 
-/* Navigation links */
+/* navylinks links */
 .nav-link {
   position: relative;
   text-decoration: none;
@@ -938,7 +943,7 @@ footer {
   transition: width 0.4s ease-in-out;
 }
 
-/* Hover effect: underline grows + glow */
+/* Hover effect: underlineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee + glow */
 .nav-link:hover {
   color: #fff;
   text-shadow: 0 0 8px rgba(255, 68, 68, 0.7), 0 0 15px rgba(128, 0, 255, 0.5);
@@ -961,7 +966,7 @@ footer {
 
 .ep-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(255, 68, 68, 0.6); /* glowing hover effect */
+  box-shadow: 0 0 25px rgba(255, 68, 68, 0.6); /* glowwwwwwwwwwwww */
   border-color: rgba(255, 68, 68, 0.4);
 }
 
@@ -978,5 +983,11 @@ footer {
 }
 
 .ep-thumb img:hover {
-  transform: scale(1.03); /* subtle zoom on hover */
+  transform: scale(1.03);
+}
+
+/* space paragraphs */
+.hero-text p {
+  margin-bottom: 1.5rem; 
+  line-height: 1.6;   
 }
