@@ -170,14 +170,14 @@ Users can add personal notes under each episode that can contain certain opinion
 
 
 ### Description
-Users can mark characters as favorites using a ⭐ (star) icon. Favorited characters are saved and displayed in a separate page called “Favorited”.
+Users can mark characters as favorites using a ❤️ (heart) icon. Favorited characters are saved and displayed in a separate page called “Favorited”.
 
 <img width="589" height="329" alt="Screenshot 2026-03-20 at 4 38 26 PM" src="https://github.com/user-attachments/assets/b04c42fd-4853-4f43-bcc3-bc81b67efb00" />
 
 
 ## CRUD Implementation
 ### CREATE
-- User clicks ⭐ on a chosen character card
+- User clicks ❤️ on a chosen character card
 - Character is added to favorites in localStorage
 
 ### READ
@@ -186,11 +186,11 @@ Users can mark characters as favorites using a ⭐ (star) icon. Favorited charac
 - OR shown in a “Favorites” section on the Home page
 
 ### UPDATE
-- Clicking ⭐ again toggles the favorite status
+- Clicking ❤️ again toggles the favorite status
 - Updates the saved data (add/remove state)
 
 ### DELETE
-- User removes a character from favorites by clicking ⭐ again or a “Remove” button
+- User removes a character from favorites by clicking ❤️ again or a “Remove” button
 - Character is removed from localStorage
 --------------------------------------------------------
 
