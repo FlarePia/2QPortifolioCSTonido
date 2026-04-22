@@ -106,7 +106,7 @@ Profile Editor:
 --------------------------------------------------------
 
 
-<img width="1920" height="1080" alt="Home (2)" src="https://github.com/user-attachments/assets/6600cf2c-fbb2-4289-a3ad-752bee2c5a19" />
+<img width="1920" height="1080" alt="Home (2)" src="https://github.com/user-attachments/assets/6600cf2c-fbb2-4289-a3ad-752bee2fffc5a19" />
 
 ## 3. Leaderboard Page (Uses collected data)
 - Can be accessed by hovering over the Minigames tab.
@@ -118,5 +118,79 @@ Profile Editor:
 - Pick your profile picture
 - Profile editing page
 - (The leaderboard page will only appear once you finished the quiz).
+--------------------------------------------------------
+
+
+# Final Modification Proposal
+
+## Overview:
+- This final modification will enhance our Unstable Universe website by implementing and using Full CRUD (Create, Read, Update, Delete) functionality using localStorage.
+This redesign will focus on two main interactive features:
+Adding Notes to Episodes in Episodes Page
+Favorite/Bookmark Characters in Characters Page which will be displayed in a new page called “Favorites”
+--------------------------------------------------------
+
+## Design & Narrative (Purpose and Usage)
+### Purpose
+- The purpose of this modification is to:
+Allow users to engage with episodes by adding personal notes and/or reactions
+Let users bookmark their favorite characters for quick access
+Implement proper use of CRUD operations using localStorage
+--------------------------------------------------------
+
+## A. Episode Notes System
+### Description
+Users can add personal notes under each episode that can contain certain opinions/reactions. These notes are saved and can be edited or removed anytime.
+
+<img width="590" height="331" alt="Screenshot 2026-03-20 at 4 38 07 PM" src="https://github.com/user-attachments/assets/16972fe6-10db-47bf-8464-4e7ee2da42ba" />
+
+## CRUD Implementation
+### CREATE
+- User types a note in an input field under a chosen episode
+- Clicks “Add Note”
+- Note is saved in localStorage under the specific episode
+
+### READ
+- Notes are automatically displayed under each episode when the page loads
+- JavaScript retrieves and renders stored notes
+
+### UPDATE
+- Each note has an “Edit” button
+- Clicking it allows the user to modify the text
+- Updated note overwrites old data in localStorage
+
+### DELETE
+- Each note has a “Delete” button
+- Clicking removes the note from both the interface and localStorage
+--------------------------------------------------------
+
+## B. Favorite / Bookmark Characters System
+
+<img width="590" height="331" alt="Screenshot 2026-03-20 at 4 38 18 PM" src="https://github.com/user-attachments/assets/9bb3d768-64f0-42ab-9950-75b3d75134e6" />
+
+
+### Description
+Users can mark characters as favorites using a ❤️ (heart) icon. Favorited characters are saved and displayed in a separate page called “Favorited”.
+
+<img width="589" height="329" alt="Screenshot 2026-03-20 at 4 38 26 PM" src="https://github.com/user-attachments/assets/b04c42fd-4853-4f43-bcc3-bc81b67efb00" />
+
+
+## CRUD Implementation
+### CREATE
+- User clicks ❤️ on a chosen character card
+- Character is added to favorites in localStorage
+
+### READ
+- Favorited characters are displayed:
+- Highlighted in the Characters page
+- OR shown in a “Favorites” section on the Home page
+
+### UPDATE
+- Clicking ❤️ again toggles the favorite status
+- Updates the saved data (add/remove state)
+
+### DELETE
+- User removes a character from favorites by clicking ❤️ again or a “Remove” button
+- Character is removed from localStorage
 --------------------------------------------------------
 
