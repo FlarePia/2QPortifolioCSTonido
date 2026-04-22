@@ -517,16 +517,75 @@ function startCardGame() {
 function filterItems(selectedTags) {
   let count = 1;
   const cards = document.querySelectorAll('.ep-card');
-  for (const card of cards) {
-    for (const selectedTag of selectedTags) {
-      if (card.classList.contains(selectedTag)) {
-        card.querySelector('.episode-number').innerHTML = count;
-        count++;
-        card.style.display = 'block';
-        break;
-      } else {
-        card.style.display = 'none';
-      }
+
+  cards.forEach(card => {
+    const hasTag = selectedTags.some(tag => card.classList.contains(tag));
+
+    if (hasTag || selectedTags.length === 0) {
+      card.style.display = 'block';
+      card.querySelector('.episode-number').innerHTML = count++;
+    } else {
+      card.style.display = 'none';
     }
-  }
-};
+  });
+}
+
+document.querySelectorAll('.notes-section').forEach(section => {
+  const input = section.querySelector('.note-input');
+  const button = section.querySelector('.add-note-btn');
+  const list = section.querySelector('.notes-list');
+
+  button.addEventListener('click', () => {
+    const text = input.value.trim();
+    if (!text) return;
+
+    const note = document.createElement('div');
+    note.classList.add('note-item');
+
+    const noteText = document.createElement('span');
+    noteText.textContent = text;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = "✖";
+    deleteBtn.classList.add('delete-note-btn');
+
+    deleteBtn.addEventListener('click', () => {
+      note.remove();
+    });
+
+    note.appendChild(noteText);
+    note.appendChild(deleteBtn);
+    list.appendChild(note);
+
+    input.value = '';
+  });
+});
+
+const favoritesList = document.querySelector('.favorites-list');
+
+document.querySelectorAll('.card.character').forEach(card => {
+  const button = card.querySelector('.fav-btn');
+
+  button.addEventListener('click', () => {
+    const name = card.querySelector('h3').textContent;
+    const img = card.querySelector('img').src;
+
+    if (document.querySelector(`[data-fav="${name}"]`)) return;
+
+    const favItem = document.createElement('div');
+    favItem.classList.add('fav-item');
+    favItem.setAttribute('data-fav', name);
+
+    favItem.innerHTML = `
+      <img src="${img}" />
+      <span>${name}</span>
+      <button class="remove-fav">✖</button>
+    `;
+
+    favItem.querySelector('.remove-fav').addEventListener('click', () => {
+      favItem.remove();
+    });
+
+    favoritesList.appendChild(favItem);
+  });
+});
